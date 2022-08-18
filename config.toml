@@ -1,6 +1,6 @@
-baseURL = "http://example.org/"
+baseURL = "https://LucasCairns.github.io/web-services-in-rust-presentation"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Writing web services in Rust"
 theme = "reveal-hugo"
 
 [markup.goldmark.renderer]
