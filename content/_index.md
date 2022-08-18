@@ -42,7 +42,9 @@ Writing web services in Rust
 
 ---
 
-## Language features
+## The Rust language
+
+the bits I really like
 
 ---
 
@@ -107,6 +109,8 @@ impl From<Claims> for ReadUser {
 
 ---
 
+{{% section %}}
+
 ## Pattern matching
 
 {{< highlight rust "linenos=inline,hl_lines=3-6" >}}
@@ -130,7 +134,38 @@ impl IntoResponse for ApiError {
 
 ---
 
-## Libraries
+They're exhaustive
+
+{{< highlight rust "linenos=inline" >}}
+fn handle_error(error: sqlx::Error) {
+    match error {
+        sqlx::Error::Configuration(_) => todo!(),
+        sqlx::Error::Database(_) => todo!(),
+        sqlx::Error::Io(_) => todo!(),
+        sqlx::Error::Tls(_) => todo!(),
+        sqlx::Error::Protocol(_) => todo!(),
+        sqlx::Error::RowNotFound => todo!(),
+        sqlx::Error::TypeNotFound { type_name } => todo!(),
+        sqlx::Error::ColumnIndexOutOfBounds { index, len } => todo!(),
+        sqlx::Error::ColumnNotFound(_) => todo!(),
+        sqlx::Error::ColumnDecode { index, source } => todo!(),
+        sqlx::Error::Decode(_) => todo!(),
+        sqlx::Error::PoolTimedOut => todo!(),
+        sqlx::Error::PoolClosed => todo!(),
+        sqlx::Error::WorkerCrashed => todo!(),
+        sqlx::Error::Migrate(_) => todo!(),
+        _ => todo!(),
+    }
+}
+{{< / highlight >}}
+
+{{% /section %}}
+
+---
+
+## Rust for web services
+
+I built a thing and this is what I learned
 
 ---
 
@@ -287,9 +322,9 @@ async fn create_person(
 
 {{% /section %}}
 
---- 
+---
 
-## What I didn't like
+## So what did I not like?
 
 - maturity of some of the libraries
 - documentation is generally good, but examples can be lacking
@@ -300,10 +335,10 @@ async fn create_person(
 ## Useful links
 
 - [the official Rust website](https://www.rust-lang.org/)
-- [the rust book](https://doc.rust-lang.org/book/)
-- [are we web yet](https://www.arewewebyet.org/)
+- [the Rust book](https://doc.rust-lang.org/book/)
+- [are we web yet?](https://www.arewewebyet.org/)
 - [my rust web service](https://github.com/LucasCairns/rust-web-app)
 
 ---
 
-# Questions?
+# Questions? 🤔
